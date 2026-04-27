@@ -1,7 +1,7 @@
 
 .footer {
-  background: #1f2937;
-  color: white;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   padding: 4rem 0 2rem;
 }
 
@@ -25,12 +25,12 @@
 .footer-logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
+  color: var(--footer-text);
   margin-bottom: 1rem;
 }
 
 .footer-description {
-  color: #9ca3af;
+  color: var(--footer-muted);
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -38,7 +38,7 @@
 .footer-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
+  color: var(--footer-text);
   margin-bottom: 1.5rem;
 }
 
@@ -51,14 +51,14 @@
 }
 
 .footer-links a {
-  color: #9ca3af;
+  color: var(--footer-muted);
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
 }
 
 .footer-links a:hover {
-  color: white;
+  color: var(--footer-text);
 }
 
 .contact-item {
@@ -66,34 +66,34 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
-  color: #9ca3af;
+  color: var(--footer-muted);
   font-size: 0.95rem;
 }
 
 .contact-item svg {
-  color: #4f46e5;
+  color: var(--color-primary);
 }
 
-.social-icons {
+.footer .social-icons {
   display: flex;
   gap: 1rem;
 }
 
-.social-icons a {
+.footer .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: var(--footer-text);
   border-radius: 50%;
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  background: #4f46e5;
+.footer .social-icons a:hover {
+  background: var(--color-primary);
   transform: translateY(-3px);
 }
 
@@ -106,7 +106,7 @@
 }
 
 .copyright {
-  color: #9ca3af;
+  color: var(--footer-muted);
   font-size: 0.9rem;
 }
 
@@ -114,7 +114,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #9ca3af;
+  color: var(--footer-muted);
   font-size: 0.9rem;
 }
 

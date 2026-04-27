@@ -23,10 +23,10 @@ function Skills() {
       skills: [
         { name: 'Node.js', level: 85 },
         { name: 'Express.js', level: 80 },
-        { name: 'Python', level: 75 },
+        { name: 'Python', level: 70 },
         { name: 'MongoDB', level: 80 },
-        { name: 'PostgreSQL', level: 70 },
-        { name: 'Firebase', level: 75 }
+        
+        
       ]
     },
     {
@@ -34,11 +34,8 @@ function Skills() {
       icon: <FiTool />,
       skills: [
         { name: 'Git', level: 90 },
-        { name: 'Docker', level: 60 },
-        { name: 'AWS', level: 65 },
         { name: 'Figma', level: 80 },
-        { name: 'Jest', level: 70 },
-        { name: 'Webpack', level: 75 }
+       
       ]
     }
   ];

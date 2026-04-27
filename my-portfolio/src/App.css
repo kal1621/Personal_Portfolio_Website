@@ -1,16 +1,19 @@
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .App {
-  text-align: center;
-  padding: 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, var(--app-glow), transparent 24%),
+    linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 48%, var(--app-bg-end) 100%);
+  color: var(--color-text);
+  transition: background 0.35s ease, color 0.35s ease;
 }

@@ -1,7 +1,7 @@
 
 .projects {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: var(--color-surface-alt);
 }
 
 .container {
@@ -17,12 +17,12 @@
 
 .section-title {
   font-size: 2.5rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
-  color: #6b7280;
+  color: var(--color-muted);
   font-size: 1.1rem;
 }
 
@@ -40,7 +40,7 @@
   align-items: center;
   gap: 0.5rem;
   font-weight: 500;
-  color: #4b5563;
+  color: var(--color-muted);
 }
 
 .filter-buttons {
@@ -51,24 +51,24 @@
 
 .filter-btn {
   padding: 0.5rem 1.25rem;
-  background: white;
-  border: 1px solid #d1d5db;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: 25px;
-  color: #4b5563;
+  color: var(--color-text);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
-  background: #f3f4f6;
-  border-color: #9ca3af;
+  background: var(--color-surface-alt);
+  border-color: var(--color-border-strong);
 }
 
 .filter-btn.active {
-  background: #4f46e5;
-  border-color: #4f46e5;
-  color: white;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
 }
 
 .projects-grid {
@@ -78,10 +78,11 @@
 }
 
 .project-card {
-  background: white;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -113,7 +114,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(79, 70, 229, 0.9);
+  background: rgba(79, 70, 229, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,15 +137,15 @@
   justify-content: center;
   width: 45px;
   height: 45px;
-  background: white;
-  color: #4f46e5;
+  background: var(--color-surface);
+  color: var(--color-primary);
   border-radius: 50%;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: #f3f4f6;
+  background: var(--color-surface-alt);
   transform: scale(1.1);
 }
 
@@ -152,8 +153,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #4f46e5;
-  color: white;
+  background: var(--color-primary);
+  color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -166,12 +167,12 @@
 
 .project-title {
   font-size: 1.3rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 0.75rem;
 }
 
 .project-description {
-  color: #6b7280;
+  color: var(--color-muted);
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -184,8 +185,8 @@
 }
 
 .tech-tag {
-  background: #f3f4f6;
-  color: #4b5563;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;

@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { FiMail, FiUser, FiMessageSquare, FiSend, FiMapPin, FiPhone, FiLinkedin, FiGithub, FiTwitter } from 'react-icons/fi';
-import emailjs from 'emailjs-com';
 import './Contact.css';
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,10 @@ function Contact() {
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState({
+    type: 'idle',
+    message: ''
+  });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -21,39 +24,40 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  
-  try {
-    
-    const response = await fetch('http://localhost:5001/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: 'idle', message: '' });
 
-    const data = await response.json();
-    
-    if (response.ok) {
-      
-      alert('✅ Message sent successfully!');
-      console.log('Backend response:', data);
-      
-     
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message.');
+      }
+
+      setStatus({
+        type: data.emailSent ? 'success' : 'warning',
+        message: data.message,
+      });
       setFormData({ name: '', email: '', message: '' });
-    } else {
-      alert('❌ Failed to send message');
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error.message || 'Could not connect to the server.',
+      });
+    } finally {
+      setLoading(false);
     }
-    
-  } catch (error) {
-    console.error('Error:', error);
-    alert('❌ Could not connect to server');
-  } finally {
-    setLoading(false);
-  }
-};
+  };
+
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -63,7 +67,6 @@ function Contact() {
         </div>
 
         <div className="contact-content">
-          {/* Contact Info */}
           <div className="contact-info">
             <div className="info-card">
               <div className="info-icon">
@@ -111,7 +114,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
@@ -159,8 +161,8 @@ function Contact() {
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="submit-btn"
                 disabled={loading}
               >
@@ -173,11 +175,14 @@ function Contact() {
                 )}
               </button>
 
-              {status === 'success' && (
-                <p className="success-message">Message sent successfully!</p>
+              {status.type === 'success' && (
+                <p className="success-message">{status.message}</p>
               )}
-              {status === 'error' && (
-                <p className="error-message">Failed to send message. Please try again.</p>
+              {status.type === 'warning' && (
+                <p className="warning-message">{status.message}</p>
+              )}
+              {status.type === 'error' && (
+                <p className="error-message">{status.message}</p>
               )}
             </form>
           </div>

@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { FiMenu, FiX, FiHome, FiBriefcase, FiUser, FiMail } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiBriefcase, FiUser, FiMail, FiMoon, FiSun } from 'react-icons/fi';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ theme, onToggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -33,9 +33,28 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
-        <div className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <FiX /> : <FiMenu />}
+        <div className="navbar-actions">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? <FiMoon /> : <FiSun />}
+            <span className="theme-toggle-label">
+              {theme === 'light' ? 'Dark mode' : 'Light mode'}
+            </span>
+          </button>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          >
+            {isOpen ? <FiX /> : <FiMenu />}
+          </button>
         </div>
 
         {/* Mobile Menu */}

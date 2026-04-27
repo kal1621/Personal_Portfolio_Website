@@ -1,7 +1,7 @@
 
 .about {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: var(--color-surface-alt);
 }
 
 .container {
@@ -17,12 +17,12 @@
 
 .section-title {
   font-size: 2.5rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
-  color: #6b7280;
+  color: var(--color-muted);
   font-size: 1.1rem;
 }
 
@@ -35,12 +35,12 @@
 
 .about-text h3 {
   font-size: 1.8rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 1.5rem;
 }
 
 .about-text p {
-  color: #4b5563;
+  color: var(--color-muted);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -59,17 +59,17 @@
 }
 
 .info-item strong {
-  color: #374151;
+  color: var(--color-heading);
   font-weight: 600;
 }
 
 .info-item span {
-  color: #6b7280;
+  color: var(--color-muted);
 }
 
 .about-services h4 {
   font-size: 1.5rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 2rem;
 }
 
@@ -80,10 +80,11 @@
 }
 
 .service-card {
-  background: white;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -94,18 +95,18 @@
 
 .service-icon {
   font-size: 2rem;
-  color: #4f46e5;
+  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
 .service-card h5 {
   font-size: 1.1rem;
-  color: #1f2937;
+  color: var(--color-heading);
   margin-bottom: 0.5rem;
 }
 
 .service-card p {
-  color: #6b7280;
+  color: var(--color-muted);
   font-size: 0.9rem;
   line-height: 1.5;
 }
